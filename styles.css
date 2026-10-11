@@ -1271,166 +1271,1610 @@ footer {
         transition-duration: .01ms !important;
         animation-duration: .01ms !important;
     }
-   
-/* ===== PANEL ADMIN SUNDBLOOM ===== */
+}
+
+/* ========================================
+   PANEL DE ADMINISTRACIÓN SUNDBLOOM
+   ======================================== */
 .admin-body {
-  width: min(1100px, 92%);
-  margin: 0 auto;
-  padding: 35px 0 70px;
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 35px 0 70px;
 }
 
 .admin-body h1 {
-  font-family: var(--serif);
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 400;
-  margin: 25px 0 12px;
+    font-family: var(--serif);
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.12;
+    font-weight: 400;
+    margin: 25px 0 12px;
+    letter-spacing: -1px;
 }
 
 .admin-body h2 {
-  font-family: var(--serif);
-  font-size: 25px;
-  font-weight: 400;
-  margin: 0 0 22px;
+    font-family: var(--serif);
+    font-size: 25px;
+    line-height: 1.2;
+    font-weight: 400;
+    margin: 0 0 22px;
 }
 
 .back-link {
-  display: inline-block;
-  color: var(--muted);
-  margin-bottom: 8px;
+    display: inline-block;
+    color: var(--muted);
+    margin-bottom: 8px;
+    font-size: 11px;
+    transition: color .2s;
 }
-
-.back-link:hover {
-  color: var(--ink);
-}
+.back-link:hover { color: var(--ink); }
 
 .notice {
-  color: var(--muted);
-  line-height: 1.8;
-  max-width: 760px;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 0 25px;
 }
 
 .admin-card {
-  background: #fff;
-  border: 1px solid var(--line);
-  padding: 28px;
-  margin: 25px 0;
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 28px;
+    margin: 25px 0;
 }
 
 .admin-form {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    align-items: start;
 }
 
 .admin-form label {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  font-weight: 600;
-  font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: .7px;
+    text-transform: uppercase;
 }
 
-.admin-form input:not([type="file"]) {
-  width: 100%;
-  min-height: 44px;
-  padding: 12px;
-  border: 1px solid var(--line);
-  background: var(--paper);
-  outline-color: var(--olive);
+.admin-form input:not([type="file"]),
+.admin-form select,
+.admin-form textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 0;
+    background: var(--paper);
+    color: var(--ink);
+    outline-color: var(--olive);
+    font-size: 12px;
+    text-transform: none;
 }
 
 .admin-form input[type="file"] {
-  width: 100%;
-  padding: 12px;
-  border: 1px dashed #b8b9a8;
-  background: var(--paper);
-  font-size: 12px;
+    width: 100%;
+    padding: 12px;
+    border: 1px dashed #b8b9a8;
+    background: var(--paper);
+    font-size: 12px;
+    text-transform: none;
 }
 
-.admin-form .wide {
-  grid-column: 1 / -1;
-}
+.admin-form .wide { grid-column: 1 / -1; }
 
 .admin-form button,
 .admin-item button {
-  min-height: 46px;
-  padding: 12px 18px;
-  border: 1px solid var(--ink);
-  background: var(--ink);
-  color: white;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: background .2s, color .2s;
+    min-height: 46px;
+    padding: 12px 18px;
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background .2s, color .2s;
 }
 
 .admin-form button:hover,
 .admin-item button:hover {
-  background: var(--olive);
-  border-color: var(--olive);
+    background: var(--olive);
+    border-color: var(--olive);
 }
 
+.admin-form button { justify-self: start; }
+
 .admin-products {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
 }
 
 .admin-item {
-  min-width: 0;
-  border: 1px solid var(--line);
-  background: var(--paper);
-  padding: 12px;
+    min-width: 0;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    padding: 12px;
 }
 
 .admin-item img {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  background: #e8e6df;
-  margin-bottom: 14px;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    background: #e8e6df;
+    margin: 0 0 14px;
 }
 
 .admin-item strong {
-  display: block;
-  font-size: 13px;
-  margin-bottom: 8px;
+    display: block;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 8px;
 }
 
 .admin-item p {
-  color: var(--olive);
-  font-weight: 700;
+    color: var(--olive);
+    font-weight: 700;
+    margin: 0 0 14px;
 }
 
 .admin-item button {
-  width: 100%;
-  background: transparent;
-  color: var(--ink);
-  border-color: var(--line);
+    width: 100%;
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--line);
 }
 
 @media (max-width: 700px) {
-  .admin-body {
-    padding-top: 24px;
-  }
-
-  .admin-card {
-    padding: 18px;
-  }
-
-  .admin-form {
-    grid-template-columns: 1fr;
-  }
-
-  .admin-form .wide {
-    grid-column: auto;
-  }
-
-  .admin-products {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-  }
+    .admin-body { padding-top: 24px; }
+    .admin-card { padding: 18px; }
+    .admin-form { grid-template-columns: 1fr; gap: 18px; }
+    .admin-form .wide { grid-column: auto; }
+    .admin-form button { width: 100%; }
+    .admin-products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 }
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

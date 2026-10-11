@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#f8f7f3">
+    <meta name="description" content="Descubre las prendas de SUNDBLOOM. Moda casual y compras por WhatsApp en Chiclayo.">
+
+    <title>SUNDBLOOM - Viste tu esencia</title>
+
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Archivo de estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Barra superior -->
+    <div class="announcement">
+        <span>ENVÍOS EN CHICLAYO</span>
+        <i>✳</i>
+        <span>COMPRA FÁCIL POR WHATSAPP</span>
+        <i>✳</i>
+        <span>NEW SEASON - SUNDBLOOM</span>
+    </div>
+
+    <!-- Encabezado y menú -->
+    <header class="site-header">
+
+        <button class="icon-btn menu-btn"
+            aria-label="Abrir menú"
+            onclick="document.querySelector('.nav-links').classList.toggle('open')">
+            ☰
+        </button>
+
+        <a class="brand" href="#inicio" aria-label="SUNDBLOOM inicio">
+            <img src="assets/logo-sundbloom.png" alt="SUNDBLOOM">
+        </a>
+
+        <nav class="nav-links">
+            <a href="#productos">TIENDA</a>
+            <a href="#coleccion">COLECCIÓN</a>
+            <a href="#nosotros">NOSOTROS</a>
+            <a href="#footer">CONTACTO</a>
+        </nav>
+
+        <div class="header-icons">
+
+            <!-- Botón de búsqueda -->
+            <button class="icon-btn search-toggle"
+                aria-label="Buscar productos"
+                onclick="toggleSearch()">
+
+                <svg viewBox="0 0 24 24">
+                    <circle cx="10.8" cy="10.8" r="6.8"/>
+                    <path d="m16 16 5 5"/>
+                </svg>
+
+            </button>
+
+            <!-- Botón del carrito -->
+            <button class="icon-btn cart-icon"
+                onclick="showCart()"
+                aria-label="Carrito de compras">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.4L21 8H6"/>
+                    <circle cx="10" cy="20" r="1"/>
+                    <circle cx="18" cy="20" r="1"/>
+                </svg>
+
+                <span id="cart-count">0</span>
+            </button>
+
+        </div>
+    </header>
+
+    <main id="inicio">
+
+        <!-- Sección principal -->
+        <section class="hero">
+
+            <div class="hero-copy">
+
+                <p class="eyebrow">
+                    SUNDBLOOM - NUEVA TEMPORADA
+                </p>
+
+                <h1>
+                    SUNDBLOOM <br>
+                    <em>ENCUENTRA TU ESTILO </em>
+                </h1>
+
+                <p class="hero-description">
+                    AQUI
+                </p>
+
+                <a class="black-button" href="#productos">
+                    DESCUBRIR PRENDAS <span>↗</span>
+                </a>
+
+                <div class="hero-note">
+                    <span class="note-dot"></span>
+                    PIEZAS PARA TODOS TUS DÍAS
+                </div>
+
+            </div>
+
+            <div class="hero-visual">
+
+                <img src="assets/e0973ef5761f53dfdc5ca2fb81977162.jpg"
+                    alt=" COLECCIÓN SUNDBLOOM">
+
+                <div class="hero-sticker">
+                    FEEL GOOD<br>
+                    <b>LOOK GOOD</b>
+                </div>
+
+                <div class="hero-caption">
+                    EVERYDAY<br>
+                    ESSENTIALS - 01
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Categorías de ropa -->
+        <section class="category-row" id="coleccion">
+
+            <a href="#productos" class="category-card category-one">
+                <img src="assets/cf103c1fc2b8f13ca2f96da2dfe3c553.jpg"
+                    alt="Look casual">
+
+                <span>01 / CASUAL</span>
+                <b>Esenciales diarios ↗</b>
+            </a>
+
+            <a href="#productos" class="category-card category-two">
+                <img src="assets/c1db035ed6a141e5fd7bbd9fb2aef8a6.jpg"
+                    alt="Look urbano">
+
+                <span>02 / STREET</span>
+                <b>Urbano y libre ↗</b>
+            </a>
+
+            <a href="#productos" class="category-card category-three">
+                <img src="assets/8d42d2c4189fc62a13d2dd86f3066710.jpg"
+                    alt="Top blanco y denim">
+
+                <span>03 / TOPS</span>
+                <b>Tu nuevo favorito ↗</b>
+            </a>
+
+        </section>
+
+        <!-- Catálogo de productos -->
+        <section class="products-section" id="productos">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">ENCUENTRA TU LOOK</p>
+                    <h2> FAVORITOS <span></span></h2>
+                </div>
+
+                <p class="section-subtitle">
+                    Prendas seleccionadas para elevar<br>
+                    tu estilo de todos los días.
+                </p>
+
+            </div>
+
+            <!-- Filtros y búsqueda -->
+            <div class="toolbar">
+
+                <div class="filter-list">
+                    <button class="filter-chip active" data-filter="all">
+                        TODO
+                    </button>
+
+                    <button class="filter-chip" data-filter="tops">
+                        TOPS
+                    </button>
+
+                    <button class="filter-chip" data-filter="casual">
+                        BLUSAS
+                    </button>
+
+                    <button class="filter-chip" data-filter="street">
+                        ACCESORIOS
+                    </button>
+                </div>
+
+                <label class="search-box" id="search-box">
+                    <span>⌕</span>
+
+                    <input id="product-search"
+                        type="search"
+                        placeholder="Buscar prendas..."
+                        aria-label="Buscar prendas">
+
+                    <button onclick="toggleSearch()"
+                        aria-label="Cerrar búsqueda">
+                        ×
+                    </button>
+                </label>
+
+                <span class="product-count" id="product-count"></span>
+
+            </div>
+
+            <!-- Aquí se muestran los productos con JavaScript -->
+            <div class="product-grid" id="product-grid"></div>
+
+        </section>
+
+        <!-- Información de la marca -->
+        <section class="manifesto" id="nosotros">
+
+            <div class="manifesto-mark">S.</div>
+
+            <div>
+                <p class="eyebrow">HECHO PARA SER TÚ</p>
+
+                <h2>
+                    Menos reglas.<br>
+                    <em>Más personalidad.</em>
+                </h2>
+            </div>
+
+            <p>
+                En SUNDBLOOM, cada prenda es una forma de expresar tu esencia, con elegancia, autenticidad y estilo propio.
+                Combina, explora y crea un estilo que sea solo tuyo.
+            </p>
+
+            <a href="#productos" class="text-link">
+                ENCUENTRA TU ESTILO <span>↗</span>
+            </a>
+
+        </section>
+
+        <!-- Servicios de la tienda -->
+        <section class="service-strip">
+
+            <div>
+                <span class="service-icon">↗</span>
+
+                <div>
+                    <b>ENTREGAS EN CHICLAYO</b>
+                    <p>Coordinamos contigo por WhatsApp</p>
+                </div>
+            </div>
+
+            <div>
+                <span class="service-icon">♡</span>
+
+                <div>
+                    <b>ATENCIÓN PERSONALIZADA</b>
+                    <p>Estamos aquí para ayudarte</p>
+                </div>
+            </div>
+
+            <div>
+                <span class="service-icon">✳</span>
+
+                <div>
+                    <b>COMPRA SIN COMPLICACIONES</b>
+                    <p>Tu pedido en pocos pasos</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer id="footer">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+                <img src="assets/logo-sundbloom.png" alt="SUNDBLOOM">
+
+                <p>
+                    Viste tu esencia.<br>
+                    Hazlo a tu manera.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <b>EXPLORA</b>
+
+                <a href="#productos">Tienda</a>
+                <a href="#coleccion">Colección</a>
+                <a href="#nosotros">Nuestra esencia</a>
+            </div>
+
+            <div class="footer-column">
+                <b>AYUDA</b>
+
+                <a href="#footer" onclick="contactWhatsApp()">Contáctanos</a>
+                <a href="#footer" onclick="contactWhatsApp()">Envíos y pedidos</a>
+                <a href="#footer" onclick="contactWhatsApp()">Consultas</a>
+            </div>
+
+            <div class="footer-contact">
+                <b>HABLEMOS</b>
+
+                <p>
+                    ¿Tienes alguna pregunta?<br>
+                    Escríbenos, estamos para ayudarte.
+                </p>
+
+                <a class="footer-whatsapp"
+                    href="https://wa.me/51947162223"
+                    target="_blank"
+                    rel="noopener">
+                    WHATSAPP ↗
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Derechos de autor -->
+        <div class="footer-bottom">
+            <span>
+                © 2026 SUNDBLOOM. TODOS LOS DERECHOS RESERVADOS.
+            </span>
+
+            <span>
+                HECHO CON ✳ EN CHICLAYO, PERÚ
+            </span>
+        </div>
+
+    </footer>
+
+    <!-- Panel del carrito -->
+    <div class="cart-backdrop"
+        id="cart-backdrop"
+        onclick="hideCart()">
+    </div>
+
+    <aside class="cart-panel"
+        id="cart-panel"
+        aria-label="Carrito de compras"
+        hidden>
+
+        <div class="cart-header">
+
+            <div>
+                <p class="eyebrow">TU SELECCIÓN</p>
+
+                <h2>
+                    Tu carrito
+                    <span id="cart-title-count">(0)</span>
+                </h2>
+            </div>
+
+            <button class="close-cart"
+                onclick="hideCart()"
+                aria-label="Cerrar carrito">
+                ×
+            </button>
+
+        </div>
+
+        <!-- Productos agregados al carrito -->
+        <div id="cart-items"></div>
+
+        <div class="cart-bottom">
+
+            <p class="cart-total" id="cart-total">
+                Total: S/ 0.00
+            </p>
+
+            <button class="black-button full" onclick="checkout()">
+                FINALIZAR POR WHATSAPP ↗
+            </button>
+
+            <p class="small-note">
+                Confirmaremos disponibilidad y entrega contigo.
+            </p>
+
+        </div>
+
+    </aside>
+
+    <!-- Archivo de funciones JavaScript -->
+    <script src="app.js"></script>
+
+</body>
+</html>

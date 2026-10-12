@@ -76,20 +76,22 @@ const defaultProducts = [
 // 2. ESTADO DE LA TIENDA
 // ==========================================
 
-function getProducts() {
+function getProducts() { return defaultProducts; }
+
+let products = getProducts();
+async function loadProductsFromSupabase() {
     try {
-        const saved = localStorage.getItem("sundbloom_products");
-
-        return saved
-            ? JSON.parse(saved)
-            : defaultProducts;
-
+        const { data, error } = await supabaseClient.from("products").select("*").order("created_at", { ascending: true });
+        if (error) throw error;
+        if (Array.isArray(data) && data.length) {
+            products = data.map(product => ({ ...product, tag: product.tag || "SUNDBLOOM" }));
+            renderProducts();
+        }
     } catch (error) {
-        return defaultProducts;
+        console.error("No se pudieron cargar los productos de Supabase:", error.message);
     }
 }
 
-let products = getProducts();
 let cart = [];
 let activeFilter = "all";
 let searchTerm = "";
@@ -487,6 +489,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Cargar productos y carrito
     renderProducts();
     updateCart();
+    loadProductsFromSupabase();
 
     // Filtros de categorías
     document.querySelectorAll(".filter-chip").forEach((button) => {

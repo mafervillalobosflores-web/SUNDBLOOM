@@ -2878,3 +2878,6 @@ footer {
 
 
 
+
+/* Respeta los elementos ocultos del panel de administración */
+[hidden] { display: none !important; }
